@@ -29,7 +29,35 @@ function App() {
     'Sakyawira Ruslim',
     'Sohan Khandaker',
     'Tim Sinyakov',
+    'Shireen',
+    'Ivy',
+    'Ching',
+    'Ruchita',
+    'Akshay',
   ]
+
+  const quotesByName = {
+    'Kiruthika (Kirthi)':
+      'Kirthi: You have been a great asset to the Integration team! Smart worker with some great team spirit, who is always committed to delivering quality work. You will surely be missed! Wishing you the best in your new role. Welcome back anytime, just give me a ring and let us stay in touch.',
+    'Osman Hawlader':
+      'Osman: Thank you, Royce, for being the live wire of the team. We appreciate your hard work, commitment, and contributions. Wishing you all the best with your future plans and every success in the journey ahead.',
+    'Sakyawira Ruslim':
+      'Sakya: Thank you, Royce, for all the contributions and help these past few years! Truly appreciate all the hard work! Wishing you great adventures to come!',
+    'Nikhil Bhatia':
+      'Nikhil: Royce mate, your commitment and accountability toward your work are commendable. You are one of the most dependable folks I have had the pleasure of working with. Congrats on the new role, and I look forward to working with you in the future.',
+    'Roop Gautam':
+      'Roop: Thank you, Royce, it has been a pleasure working with you. Wishing you all the best and much success in your next role.',
+    'Jo Luarez':
+      'Jo: Hey Royce, even though it was not a lot of time, I learned a lot and had the pleasure of working with you. Wishing you success in this next part of your journey 😀.',
+    Shireen: 'Shireen: Hey Royce, it has been a pleasure working alongside you.',
+    Ivy: 'Ivy: Hey Royce, really appreciate your great personality. It seems you were always on the move (from Canada to NZ and then), huh? Active guy, just like your personality 😀 - you will be missed! All the very best for your next adventure. Look after yourself.',
+    Ching:
+      'Ching: Royce! Thanks so much for putting up with my annoyingness and helping solve problems with me. It is very much appreciated! It has been lovely nagging you to turn your camera on. All the best in your new role 😊.',
+    Ruchita:
+      'Ruchita: Hey Royce, it was great working alongside you. Best of luck in your future endeavours!',
+    Akshay:
+      'Akshay: Hi Royce, I really enjoyed working with you and had a great time collaborating on our SF - Azure integration issues. 😊 Best wishes! I know the Azure team will miss you.',
+  }
 
   return (
     <main className="page">
@@ -64,7 +92,7 @@ function App() {
         <section className="quotes" aria-label="Team quotes for Royce">
           <h2>Team Quotes</h2>
           <p className="quotes-intro">
-            Add a short message from everyone to complete Royce&apos;s farewell card.
+            Please add your name before the message.
           </p>
 
           <div className="quote-grid">
@@ -72,7 +100,9 @@ function App() {
               <article className="quote-card" key={name}>
                 <h3>{name}</h3>
                 <p className="quote-placeholder" aria-label={`Placeholder quote from ${name}`}>
-                  &quot;Your message for Royce goes here...&quot;
+                  {quotesByName[name]
+                    ? `"${quotesByName[name]}"`
+                    : '"Your message for Royce goes here..."'}
                 </p>
               </article>
             ))}
